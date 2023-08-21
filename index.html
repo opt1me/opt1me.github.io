@@ -10,6 +10,7 @@
     function generateLink() {
       // Get the input values
       var walletAddress = document.getElementById('walletAddress').value.substr(2);
+      var fullwalletAddress = document.getElementById('walletAddress');
       var amountToPay = document.getElementById('amountToPay').value;
       var numberOfShares = parseInt(document.getElementById('numberOfShares').value).toString(16);
 
@@ -50,10 +51,10 @@ www.friend.tech##.HomemodalCustomContainerG8Wm`;
     <label for="numberOfShares">Number of Shares:</label>
     <input type="number" id="numberOfShares" placeholder="Enter the number of shares"><br>
     <button onclick="generateLink()">Submit</button>
-    <p><a id="quickTaskLink"></a></p>
-    <p><a id="friendTechLink"></a></p>
+    <p><a id="quickTaskLink" target="_blank"></a></p>
+    <p><a id="friendTechLink" target="_blank"></a></p>
     <p>To view Friend Tech via your web browser, install <a
-        href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">UBlock
+        href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank">UBlock
         Origin</a>, and add the following code to your filters:</p>
     <div class="filterCode">
       <code>www.friend.tech##.Home_modalCustomBody5Yj6z > div<br>
