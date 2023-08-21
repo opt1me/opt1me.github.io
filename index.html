@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain QuickTask</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function generateLink() {
+      // Get the input values
+      var walletAddress = document.getElementById('walletAddress').value.substr(2);
+      var amountToPay = document.getElementById('amountToPay').value;
+      var numberOfShares = parseInt(document.getElementById('numberOfShares').value).toString(16);
+
+      // Construct the QuickTask URL
+      var url = `http://localhost:3333/qt?contractAddress=0xcf205808ed36593aa40a44f10c7f7c2f67d4a4d4&mintPrice=${amountToPay}&mintData=0x6945b123000000000000000000000000${walletAddress}000000000000000000000000000000000000000000000000000000000000000${numberOfShares}`;
+
+      // Display the link
+      document.getElementById('quickTaskLink').href = url;
+      document.getElementById('quickTaskLink').innerHTML = "Click Here for QuickTask";
+
+      // Display Friend Tech link
+      document.getElementById('friendTechLink').href = `https://friend.tech/rooms/${walletAddress}`;
+      document.getElementById('friendTechLink').innerHTML = "Join Friend Tech Room";
+    }
+
+    function copyFilters() {
+      var textArea = document.createElement('textarea');
+      textArea.value = `www.friend.tech##.Home_modalCustomBody5Yj6z > div
+www.friend.tech##.Home_modalCustomBody5Yj6z
+www.friend.tech##.Home_modalBackgroundRn404
+www.friend.tech##.HomemodalCustomContainerG8Wm`;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Filters copied to clipboard!');
+    }
+  </script>
+</head>
+
+<body>
+  <h1>MetaSniper Friends.Tech<br>QuickTask Generator</h1>
+  <div class="container">
+    <label for="walletAddress">Wallet Address:</label>
+    <input type="text" id="walletAddress" placeholder="Paste blockchain address"><br>
+    <label for="amountToPay">Amount to Pay:</label>
+    <input type="number" id="amountToPay" placeholder="Enter the amount"><br>
+    <label for="numberOfShares">Number of Shares:</label>
+    <input type="number" id="numberOfShares" placeholder="Enter the number of shares"><br>
+    <button onclick="generateLink()">Submit</button>
+    <p><a id="quickTaskLink"></a></p>
+    <p><a id="friendTechLink"></a></p>
+    <p>To view Friend Tech via your web browser, install <a
+        href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">UBlock
+        Origin</a>, and add the following code to your filters:</p>
+    <div class="filterCode">
+      <code>www.friend.tech##.Home_modalCustomBody5Yj6z > div<br>
+    www.friend.tech##.Home_modalCustomBody5Yj6z<br>
+    www.friend.tech##.Home_modalBackgroundRn404<br>
+    www.friend.tech##.HomemodalCustomContainerG8Wm</code>
+    </div>
+    <button onclick="copyFilters()">Copy Filters</button>
+  </div>
+</body>
+
+</html>
