@@ -10,7 +10,7 @@
     function generateLink() {
       // Get the input values
       var walletAddress = document.getElementById('walletAddress').value.substr(2);
-      var fullwalletAddress = document.getElementById('walletAddress');
+      var fullwalletAddress = document.getElementById('walletAddress').value;
       var amountToPay = document.getElementById('amountToPay').value;
       var numberOfShares = parseInt(document.getElementById('numberOfShares').value).toString(16);
 
